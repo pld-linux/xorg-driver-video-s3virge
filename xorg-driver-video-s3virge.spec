@@ -1,12 +1,12 @@
 Summary:	X.org video driver for S3 ViRGE and Trio3D video chips
 Summary(pl):	Sterownik obrazu X.org dla uk³adów graficznych S3 ViRGE i Trio3D
 Name:		xorg-driver-video-s3virge
-Version:	1.8.6.2
+Version:	1.8.6.3
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC2/driver/xf86-video-s3virge-%{version}.tar.bz2
-# Source0-md5:	f85f8d129c0ae2f92d53372e81c0d6a3
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/driver/xf86-video-s3virge-%{version}.tar.bz2
+# Source0-md5:	b6a9070a84b963078046eb801c44ac4d
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -17,7 +17,7 @@ BuildRequires:	xorg-proto-randrproto-devel
 BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-proto-videoproto-devel
 BuildRequires:	xorg-proto-xextproto-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.1
+BuildRequires:	xorg-util-util-macros >= 0.99.2
 BuildRequires:	xorg-xserver-server-devel >= 0.99.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,8 +53,7 @@ ViRGE GX2 (86C357), ViRGE MX (86C260), ViRGE MX+ (86C280), Trio3D
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	drivermandir=%{_mandir}/man4
+	DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
 
@@ -65,4 +64,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO_NOTES
 %attr(755,root,root) %{_libdir}/xorg/modules/drivers/s3virge_drv.so
-%{_mandir}/man4/s3virge.4x*
+%{_mandir}/man4/s3virge.4*
