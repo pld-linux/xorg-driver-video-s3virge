@@ -1,5 +1,5 @@
 Summary:	X.org video driver for S3 ViRGE and Trio3D video chips
-Summary(pl):	Sterownik obrazu X.org dla uk³adów graficznych S3 ViRGE i Trio3D
+Summary(pl.UTF-8):   Sterownik obrazu X.org dla ukÅ‚adÃ³w graficznych S3 ViRGE i Trio3D
 Name:		xorg-driver-video-s3virge
 Version:	1.9.1
 Release:	0.1
@@ -29,9 +29,9 @@ ViRGE VX (86C988), ViRGE DX (86C375), ViRGE GX (86C385), ViRGE GX2
 (86C357), ViRGE MX (86C260), ViRGE MX+ (86C280), Trio3D (86C365),
 Trio3D/2X (86C362, 86C368).
 
-%description -l pl
-Sterownik obrazu X.org dla uk³adów graficznych S3 ViRGE i Trio3D.
-Obs³uguje karty PCI i AGP oparte na nastêpuj±cych uk³adach: ViRGE
+%description -l pl.UTF-8
+Sterownik obrazu X.org dla ukÅ‚adÃ³w graficznych S3 ViRGE i Trio3D.
+ObsÅ‚uguje karty PCI i AGP oparte na nastÄ™pujÄ…cych ukÅ‚adach: ViRGE
 (86C325), ViRGE VX (86C988), ViRGE DX (86C375), ViRGE GX (86C385),
 ViRGE GX2 (86C357), ViRGE MX (86C260), ViRGE MX+ (86C280), Trio3D
 (86C365), Trio3D/2X (86C362, 86C368).
