@@ -12,16 +12,16 @@ BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	rpmbuild(macros) >= 1.389
 BuildRequires:	xorg-lib-libpciaccess-devel >= 0.8.0
 BuildRequires:	xorg-proto-fontsproto-devel
 BuildRequires:	xorg-proto-randrproto-devel
 BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-proto-videoproto-devel
-BuildRequires:	xorg-proto-xextproto-devel
+BuildRequires:	xorg-proto-xextproto-devel >= 7.0.99.1
 BuildRequires:	xorg-util-util-macros >= 0.99.2
 BuildRequires:	xorg-xserver-server-devel >= 1.0.99.901
-BuildRequires:  rpmbuild(macros) >= 1.389
-%requires_xorg_xserver_videodrv
+%{?requires_xorg_xserver_videodrv}
 Requires:	xorg-xserver-server >= 1.0.99.901
 Obsoletes:	X11-driver-s3virge < 1:7.0.0
 Obsoletes:	XFree86-S3V
@@ -30,17 +30,29 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 X.org video driver for S3 ViRGE and Trio3D video chips. It supports
-PCI and AGP video cards based on the following chips: ViRGE (86C325),
-ViRGE VX (86C988), ViRGE DX (86C375), ViRGE GX (86C385), ViRGE GX2
-(86C357), ViRGE MX (86C260), ViRGE MX+ (86C280), Trio3D (86C365),
-Trio3D/2X (86C362, 86C368).
+PCI and AGP video cards based on the following chips:
+- ViRGE (86C325),
+- ViRGE VX (86C988),
+- ViRGE DX (86C375),
+- ViRGE GX (86C385),
+- ViRGE GX2 (86C357),
+- ViRGE MX (86C260),
+- ViRGE MX+ (86C280),
+- Trio3D (86C365),
+- Trio3D/2X (86C362, 86C368).
 
 %description -l pl.UTF-8
 Sterownik obrazu X.org dla układów graficznych S3 ViRGE i Trio3D.
-Obsługuje karty PCI i AGP oparte na następujących układach: ViRGE
-(86C325), ViRGE VX (86C988), ViRGE DX (86C375), ViRGE GX (86C385),
-ViRGE GX2 (86C357), ViRGE MX (86C260), ViRGE MX+ (86C280), Trio3D
-(86C365), Trio3D/2X (86C362, 86C368).
+Obsługuje karty PCI i AGP oparte na następujących układach:
+- ViRGE (86C325),
+- ViRGE VX (86C988),
+- ViRGE DX (86C375),
+- ViRGE GX (86C385),
+- ViRGE GX2 (86C357),
+- ViRGE MX (86C260),
+- ViRGE MX+ (86C280),
+- Trio3D (86C365),
+- Trio3D/2X (86C362, 86C368).
 
 %prep
 %setup -q -n xf86-video-s3virge-%{version}
@@ -51,8 +63,7 @@ ViRGE GX2 (86C357), ViRGE MX (86C260), ViRGE MX+ (86C280), Trio3D
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure \
-	--disable-static
+%configure
 
 %{__make}
 
