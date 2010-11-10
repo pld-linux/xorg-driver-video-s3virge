@@ -2,7 +2,7 @@ Summary:	X.org video driver for S3 ViRGE and Trio3D video chips
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów graficznych S3 ViRGE i Trio3D
 Name:		xorg-driver-video-s3virge
 Version:	1.10.4
-Release:	4
+Release:	5
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-s3virge-%{version}.tar.bz2
