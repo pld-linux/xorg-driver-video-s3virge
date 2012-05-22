@@ -1,14 +1,14 @@
 Summary:	X.org video driver for S3 ViRGE and Trio3D video chips
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów graficznych S3 ViRGE i Trio3D
 Name:		xorg-driver-video-s3virge
-Version:	1.10.4
-Release:	9
+Version:	1.10.5
+Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-s3virge-%{version}.tar.bz2
-# Source0-md5:	6517bbbf808c700502d51acdc44662f8
+# Source0-md5:	5b5468c5c58a2e3870567eb7eb935e5e
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
@@ -19,7 +19,7 @@ BuildRequires:	xorg-proto-randrproto-devel
 BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-proto-videoproto-devel
 BuildRequires:	xorg-proto-xextproto-devel >= 7.0.99.1
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRequires:	xorg-xserver-server-devel >= 1.0.99.901
 %{?requires_xorg_xserver_videodrv}
 Requires:	xorg-xserver-server >= 1.0.99.901
@@ -74,13 +74,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README TODO_NOTES
+%doc COPYING ChangeLog README TODO
 %attr(755,root,root) %{_libdir}/xorg/modules/drivers/s3virge_drv.so
 %{_mandir}/man4/s3virge.4*
