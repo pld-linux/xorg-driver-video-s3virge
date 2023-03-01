@@ -1,19 +1,19 @@
 Summary:	X.org video driver for S3 ViRGE and Trio3D video chips
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów graficznych S3 ViRGE i Trio3D
 Name:		xorg-driver-video-s3virge
-Version:	1.11.0
-Release:	2
+Version:	1.11.1
+Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	https://xorg.freedesktop.org/releases/individual/driver/xf86-video-s3virge-%{version}.tar.bz2
-# Source0-md5:	389014e2a6739a009f62dc19bb9edd17
-Patch0:		xorg-abi24.patch
+Source0:	https://xorg.freedesktop.org/releases/individual/driver/xf86-video-s3virge-%{version}.tar.xz
+# Source0-md5:	e74bb0147656fb0cc149732d76d3743a
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.389
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libpciaccess-devel >= 0.8.0
 BuildRequires:	xorg-proto-fontsproto-devel
 BuildRequires:	xorg-proto-randrproto-devel
@@ -23,11 +23,12 @@ BuildRequires:	xorg-proto-xextproto-devel >= 7.0.99.1
 BuildRequires:	xorg-proto-xproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRequires:	xorg-xserver-server-devel >= 1.0.99.901
+BuildRequires:	xz
 %{?requires_xorg_xserver_videodrv}
 Requires:	xorg-xserver-server >= 1.0.99.901
 Provides:	xorg-driver-video
 Obsoletes:	X11-driver-s3virge < 1:7.0.0
-Obsoletes:	XFree86-S3V
+Obsoletes:	XFree86-S3V < 4
 Obsoletes:	XFree86-driver-s3virge < 1:7.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,7 +60,6 @@ Obsługuje karty PCI i AGP oparte na następujących układach:
 
 %prep
 %setup -q -n xf86-video-s3virge-%{version}
-%patch0 -p1
 
 %build
 %{__libtoolize}
